@@ -9,9 +9,7 @@ import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 
-/**
- * Unit test for simple App.
- */
+
 public class AppTest {
     
     private final App appUnderTest = new App();
@@ -23,8 +21,7 @@ public class AppTest {
     }
     
     @Test
-    void fourByFourMatrixShouldPrintCorrectValues()
-    {   
+    void fourByFourMatrixShouldPrintCorrectValues() {   
         // Given
         int[][] arrayToTest =  {
             {1, 2, 3, 4},
@@ -40,8 +37,7 @@ public class AppTest {
     }
 
     @Test
-    void fiveByFiveMatrixShouldPrintCorrectValues()
-    {   
+    void fiveByFiveMatrixShouldPrintCorrectValues() {   
         // Given
         int[][] arrayToTest =  {
             {1, 2, 3, 4, 5},
@@ -57,8 +53,7 @@ public class AppTest {
     }
 
     @Test
-    void SixByFiveMatrixShouldPrintCorrectValues()
-    {   
+    void SixByFiveMatrixShouldPrintCorrectValues() {   
         // Given
         int[][] arrayToTest =  {
             {1, 2, 3, 4, 5, 6},
@@ -74,8 +69,7 @@ public class AppTest {
     }
 
     @Test
-    void emptyMatrixShouldThrowIllegalArgumentException()
-    {   
+    void emptyMatrixShouldThrowIllegalArgumentException() {   
         // Given
         int[][] arrayToTest = null;
         // When

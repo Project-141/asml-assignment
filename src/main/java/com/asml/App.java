@@ -3,11 +3,10 @@ package com.asml;
 import java.lang.StringBuilder;
 import com.asml.model.Direction;
 
-
 public class App {
     public static void main(String[] args)
     {
-        int[][] arrayToTest =  {
+        int[][] arrayToTest = {
             {1, 2, 3, 4},
             {5, 6, 7, 8},
             {9, 10, 11, 12},
@@ -15,10 +14,15 @@ public class App {
         };
 
         App app = new App();
-        app.navigateMatrix(arrayToTest);
-        
+        app.navigateMatrix(arrayToTest);        
     }
 
+    /**
+     * Traverses the given matrix in a clockwise spiral starting in the top left, and prints the output.
+     *
+     * @param      matrix  the matrix to be traversed
+     * @throws     IllegalArgumentException  if no matrix is passed to the method.
+     */
     public void navigateMatrix(int[][] matrix) {
         if (matrix == null) {
             throw new IllegalArgumentException("No matrix was passed");
@@ -39,7 +43,7 @@ public class App {
                 case RIGHT:
                     // Traverse a top row. Each iteration moves 1 row and column from the edge, and runs 1 less column
                     for (int i = 0 + iteration; i < amountOfColumns - iteration; ++i) {
-                        result.append(matrix[0+iteration][i] + ",");
+                        result.append(matrix[0 + iteration][i] + ",");
                         charactersWritten++;
                     }
                     result.append(" "); 
@@ -47,7 +51,7 @@ public class App {
                     break;
                 case DOWN:
                     // Traverse the right column. Each iteration moves 1 row and column from the edge, and runs 1 less row
-                    for (int i = 1 + iteration; i <= amountOfRows - 1 - iteration; ++i) {
+                    for (int i = 1 + iteration; i < amountOfRows - iteration; ++i) {
                         result.append(matrix[i][amountOfColumns - 1 - iteration] + ",");
                         charactersWritten++;
                     }
@@ -83,7 +87,7 @@ public class App {
      * Returns the next direction in a clockwise movement.
      *
      * @param      direction  the current direction
-     * @throws     IllegalArgumentException  if the direction argument is not DOWN, LEFT, UP or DOWN (i.e. null).
+     * @throws     IllegalArgumentException  if the direction argument is not DOWN, LEFT, UP or DOWN.
      */
     private Direction getNextClockwiseDirection(Direction direction) {
         switch (direction) {

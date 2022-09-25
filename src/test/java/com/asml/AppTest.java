@@ -2,7 +2,6 @@ package com.asml;
 
 import static org.junit.jupiter.api.Assertions.fail;
 
-import com.asml.model.Direction;
 import java.io.ByteArrayOutputStream;
 import java.io.PrintStream;
 import org.junit.jupiter.api.Assertions;
@@ -75,6 +74,7 @@ public class AppTest {
         // When
         try {
             appUnderTest.navigateMatrix(arrayToTest);
+            fail("Should have thrown IAE");
         } catch (IllegalArgumentException e) {
             // Then
             Assertions.assertEquals("No matrix was passed", e.getMessage());
